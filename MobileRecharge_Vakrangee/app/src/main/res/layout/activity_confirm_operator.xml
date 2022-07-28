@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_background"
+    android:padding="10dp"
+    tools:context=".MobileRecharge.Confirm_OperatorActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/back"
+            android:textAlignment="center"
+            android:paddingVertical="3dp"
+            android:textSize="12sp"
+            android:fontFamily="@font/quicksandmedium"
+            android:textColor="@color/bg_textcolor_back"
+            android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_24"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobile_recharge"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/imgHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/icon_help"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_mobile_number"
+            android:layout_alignParentLeft="true"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
