@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/bg_bottomnavigation.xml" value="0.2145" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/bg_dashboard_haeader_white.xml" value="0.193" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/bgr_recharge_header.xml" value="0.194" />
         <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/questionbg.xml" value="0.194" />
         <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/select_type_bg.xml" value="0.194" />
         <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_electricity_bill.xml" value="0.1859375" />
