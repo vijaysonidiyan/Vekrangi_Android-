@@ -77,7 +77,6 @@
             android:hint="@string/hint_enter_number_here"
             android:textSize="13sp"
             android:maxLength="10"
-            in
             android:background="@android:color/transparent"/>
 
     </LinearLayout>
