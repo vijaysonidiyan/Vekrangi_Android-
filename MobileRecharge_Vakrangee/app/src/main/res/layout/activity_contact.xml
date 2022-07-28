@@ -77,11 +77,30 @@
             android:hint="@string/hint_enter_number_here"
             android:textSize="13sp"
             android:maxLength="10"
-            in
             android:background="@android:color/transparent"/>
 
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycle_recent"
+        android:layout_marginVertical="10dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_contact"
+        android:fontFamily="@font/quicksandmedium"
+        android:textSize="15sp"
+        android:textColor="@color/black02"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/recycle_view_bg"
+        android:id="@+id/recycle_contacts"
+        android:layout_marginVertical="10dp"/>
 
   </LinearLayout>
