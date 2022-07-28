@@ -3,17 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/bg_bottomnavigation.xml" value="0.2145" />
-        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/questionbg.xml" value="0.194" />
-        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/select_type_bg.xml" value="0.194" />
-        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_electricity_bill.xml" value="0.1859375" />
-        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
-        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_rechargeand_bil_payment_dash_board.xml" value="0.3484375" />
-        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/bottomayout.xml" value="0.3625" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.216" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/reactangle.xml" value="0.216" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_contact.xml" value="0.3625" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
