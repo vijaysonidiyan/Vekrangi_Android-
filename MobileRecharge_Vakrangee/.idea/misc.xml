@@ -3,9 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.216" />
-        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/reactangle.xml" value="0.216" />
-        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_contact.xml" value="0.3625" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable-anydpi/ic_back_arrow.xml" value="0.142" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/drawable/questionbg.xml" value="0.142" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_base.xml" value="0.27291666666666664" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_confirm_operator.xml" value="0.27291666666666664" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_contact.xml" value="0.27291666666666664" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_electricity_bill.xml" value="0.27291666666666664" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_mobile_recharge.xml" value="0.27291666666666664" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/activity_rechargeand_bil_payment_dash_board.xml" value="0.27291666666666664" />
+        <entry key="..\:/git_repo/Vekrangi_Android-/MobileRecharge_Vakrangee/app/src/main/res/layout/bottomayout.xml" value="0.27291666666666664" />
       </map>
     </option>
   </component>
