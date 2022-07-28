@@ -3,5 +3,6 @@
     <string name="back">Back</string>
     <string name="mobile_recharge">Mobile Recharge</string>
     <string name="enter_mobile_number">Enter Mobile Number</string>
-
+    <string name="country_code">+91</string>
+    <string name="hint_enter_number_here">Enter number here</string>
 </resources>
