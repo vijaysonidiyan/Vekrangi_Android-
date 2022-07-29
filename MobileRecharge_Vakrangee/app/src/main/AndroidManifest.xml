@@ -17,9 +17,6 @@
         android:theme="@style/Theme.MobileRecharge_Vakrangee"
         tools:targetApi="31">
         <activity
-            android:name=".HelpAdapter"
-            android:exported="false" />
-        <activity
             android:name=".MobileRecharge.HelpActivity"
             android:exported="true">
             <intent-filter>

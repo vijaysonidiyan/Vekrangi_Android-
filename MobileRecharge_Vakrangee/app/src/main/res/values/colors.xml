@@ -5,6 +5,7 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="btn_bg">#DFF3FF</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bg_bottom_nav">#2C9DE4</color>
