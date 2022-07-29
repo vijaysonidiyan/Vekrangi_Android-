@@ -2,4 +2,7 @@
 <resources>
     <string name="mobile_recharge">Mobile Recharge</string>
     <string name="hint_enter_number_here">Enter number here</string>
+    <string name="recents">Recents</string>
+    <string name="transaction_id_code">1234982H3r923</string>
+    <string name="okay">Okay</string>
 </resources>

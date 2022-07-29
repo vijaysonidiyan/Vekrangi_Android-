@@ -18,6 +18,15 @@ public class Contacts {
     public static class ContactList {
         String name;
         String number;
+        int color;
+
+        public int getColor() {
+            return color;
+        }
+
+        public void setColor(int color) {
+            this.color = color;
+        }
 
         public String getName() {
             return name;

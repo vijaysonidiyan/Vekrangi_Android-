@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:paddingHorizontal="18dp"
     android:paddingTop="18dp"
     android:orientation="vertical"
-    tools:context=".MobileRecharge.ContactActivity">
+    tools:context=".MobileBillPayment.ContactOperatorActivity">
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,19 +31,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/mobile_recharge"
+            android:text="@string/mobile_bill_payment"
             android:fontFamily="@font/quicksand_semi_bold"
             android:textSize="15sp"
             android:textColor="@color/black"
             android:layout_centerInParent="true"/>
 
         <ImageView
-            android:id="@+id/imgHelp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:onClick="onClickEvent"
-            android:src="@drawable/help" />
+            android:id="@+id/imgHelp"
+            android:src="@drawable/help"
+            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 
     <TextView
@@ -168,4 +168,4 @@
         android:id="@+id/recycle_contacts"
         android:layout_marginVertical="10dp"/>
 
-  </LinearLayout>
+</LinearLayout>
