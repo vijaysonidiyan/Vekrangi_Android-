@@ -32,7 +32,33 @@
     <string name="p">P</string>
     <string name="your_contact">Your Contact</string>
     <string name="contact_no">+91 1234567890</string>
-    
+    <string name="recents">Recents</string>
+    <string name="mobile_bill_payment">Mobile Bill Payment</string>
+    <string name="transaction_id">Transaction ID</string>
+    <string name="transaction_id_code">1234982H3r923</string>
+    <string name="okay">Okay</string>
+    <string name="download_invoice">Download Invoice</string>
+
+    <string name="lbl_select_plan">Select Plan</string>
+
+    <string name="lbl_username">Username</string>
+    <string name="company_name">JIO Prepaid</string>
+    <string name="location">Delhi &amp; NCR</string>
+    <string name="lbl_recharge_amount">Recharge with Amount</string>
+    <string name="lbl_rupee_symbol">₹</string>
+    <string name="lbl_plan_100">₹100</string>
+    <string name="lbl_plan_500">₹500</string>
+    <string name="lbl_plan_1000">₹1000</string>
+    <string name="lbl_plan_2000">₹2000</string>
+    <string name="lbl_recharge_with_plan">Or Recharge with Plan</string>
+    <string name="lbl_hint_search_plan">Search For A Plan EG 149 Or 29 Days</string>
+    <string name="lbl_plan_all">All</string>
+    <string name="lbl_unlimited">Unlimited</string>
+    <string name="lbl_plan_data">Data</string>
+    <string name="lbl_plan_combo">Combo</string>
+    <string name="lbl_plan_smart">Smart</string>
+
+
 
 
     <string-array name="dropdwon_jio">
