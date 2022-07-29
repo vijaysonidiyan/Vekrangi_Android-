@@ -2,14 +2,25 @@
     <string name="app_name">MobileRecharge_Vakrangee</string>
     <string name="back">Back</string>
     <string name="mobile_recharge">Mobile Recharge</string>
-    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="mobile_bill_payment">Mobile Bill Payment</string>
+
     <string name="country_code">+91</string>
+    <string name="payment_sign">₹</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="payment">Payment</string>
+    <string name="amount">Amount</string>
     <string name="hint_enter_number_here">Enter number here</string>
+    <string name="hint_enter_amount">Enter Amount here</string>
+    <string name="price">₹100</string>
+    <string name="price_500">₹500</string>
+    <string name="price_1000">₹1000</string>
+    <string name="price_2000">₹2000</string>
     <string name="operator">Operator</string>
     <string name="delhi_ncr">Delhi &amp; NCR</string>
     <string name="change">Change</string>
     <string name="area_circle">Area Circle</string>
     <string name="Confirm_Proceed">Confirm &amp; Proceed</string>
+    <string name="amount_proceed">Proceed ₹700</string>
     <string name="help">Help</string>
     <string name="faqs">FAQs</string>
     <string name="txt1">How to change payment options?</string>
@@ -32,7 +43,24 @@
     <string name="p">P</string>
     <string name="your_contact">Your Contact</string>
     <string name="contact_no">+91 1234567890</string>
-    
+    <string name="promocode">Have Any Promocode ?</string>
+    <string name="view_offers">View Offers</string>
+    <string name="enter_promocode_here">Enter Promocode Here</string>
+    <string name="order_detils">Order Details</string>
+    <string name="Plan">Plan</string>
+    <string name="plan_amount">₹ 699</string>
+    <string name="Voucher_Promocode">Voucher / Promocode</string>
+    <string name="XXX">XXX</string>
+    <string name="Total">Total</string>
+    <string name="total_order">₹ 699</string>
+    <string name="Payment_Options">Payment Options</string>
+    <string name="Bank_name">Bank Name A/c xx xxxx</string>
+    <string name="chack_blance">Check Balance</string>
+    <string name="chack_blance_pay">Pay ₹ 699</string>
+    <string name="upi">UPI</string>
+    <string name="bharat_wallet">Bharateasy Wallet</string>
+    <string name="net_banking">Net Banking</string>
+    <string name="card">Card</string>
 
 
     <string-array name="dropdwon_jio">

@@ -17,6 +17,18 @@
         android:theme="@style/Theme.MobileRecharge_Vakrangee"
         tools:targetApi="31">
         <activity
+            android:name=".MobileRecharge.Mobile_Recharge_PaymentActivity"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".MobileBillPayment.Entered_phoneActivity"
+            android:exported="false"/>
+        <activity
             android:name=".MobileBillPayment"
             android:exported="false" />
         <activity
