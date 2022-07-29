@@ -17,17 +17,13 @@
         android:theme="@style/Theme.MobileRecharge_Vakrangee"
         tools:targetApi="31">
         <activity
-            android:name=".MobileRecharge.Mobile_Recharge_PaymentActivity"
-            android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            android:name=".MobileBillPayment.ContactOperatorActivity"
+            android:exported="true" >
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
         </activity>
-        <activity
-            android:name=".MobileBillPayment.Entered_phoneActivity"
-            android:exported="false"/>
         <activity
             android:name=".MobileBillPayment"
             android:exported="false" />
@@ -37,23 +33,27 @@
             tools:ignore="MissingClass" />
         <activity
             android:name=".MobileRecharge.HelpActivity"
-            android:exported="true">
+            android:exported="false">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".MobileRecharge.ContactActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".MobileRecharge.Confirm_OperatorActivity"
             android:exported="false" />
         <activity
-            android:name=".MobileRecharge"
+            android:name=".MobileRecharge.MobileRecharge"
             android:exported="false"
             tools:ignore="MissingClass" />
         <activity
@@ -66,12 +66,15 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="false">
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
     </application>
 

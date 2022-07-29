@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
@@ -9,6 +9,7 @@
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:id="@+id/card_view"
         app:cardBackgroundColor="@color/backcolor"
         app:cardCornerRadius="25dp">
 
@@ -25,11 +26,12 @@
     </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:orientation="vertical"
-        android:layout_gravity="center_vertical">
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/card_view">
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,4 +53,26 @@
 
     </LinearLayout>
 
-</LinearLayout>
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:id="@+id/card_operator"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        app:cardBackgroundColor="@color/backcolor"
+        app:cardCornerRadius="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_operator"
+            android:layout_gravity="center"
+            android:text="@string/p"
+            android:fontFamily="@font/quicksandbold"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"/>
+
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+</RelativeLayout>

@@ -2,25 +2,14 @@
     <string name="app_name">MobileRecharge_Vakrangee</string>
     <string name="back">Back</string>
     <string name="mobile_recharge">Mobile Recharge</string>
-    <string name="mobile_bill_payment">Mobile Bill Payment</string>
-
-    <string name="country_code">+91</string>
-    <string name="payment_sign">₹</string>
     <string name="enter_mobile_number">Enter Mobile Number</string>
-    <string name="payment">Payment</string>
-    <string name="amount">Amount</string>
+    <string name="country_code">+91</string>
     <string name="hint_enter_number_here">Enter number here</string>
-    <string name="hint_enter_amount">Enter Amount here</string>
-    <string name="price">₹100</string>
-    <string name="price_500">₹500</string>
-    <string name="price_1000">₹1000</string>
-    <string name="price_2000">₹2000</string>
     <string name="operator">Operator</string>
     <string name="delhi_ncr">Delhi &amp; NCR</string>
     <string name="change">Change</string>
     <string name="area_circle">Area Circle</string>
     <string name="Confirm_Proceed">Confirm &amp; Proceed</string>
-    <string name="amount_proceed">Proceed ₹700</string>
     <string name="help">Help</string>
     <string name="faqs">FAQs</string>
     <string name="txt1">How to change payment options?</string>
@@ -43,24 +32,33 @@
     <string name="p">P</string>
     <string name="your_contact">Your Contact</string>
     <string name="contact_no">+91 1234567890</string>
-    <string name="promocode">Have Any Promocode ?</string>
-    <string name="view_offers">View Offers</string>
-    <string name="enter_promocode_here">Enter Promocode Here</string>
-    <string name="order_detils">Order Details</string>
-    <string name="Plan">Plan</string>
-    <string name="plan_amount">₹ 699</string>
-    <string name="Voucher_Promocode">Voucher / Promocode</string>
-    <string name="XXX">XXX</string>
-    <string name="Total">Total</string>
-    <string name="total_order">₹ 699</string>
-    <string name="Payment_Options">Payment Options</string>
-    <string name="Bank_name">Bank Name A/c xx xxxx</string>
-    <string name="chack_blance">Check Balance</string>
-    <string name="chack_blance_pay">Pay ₹ 699</string>
-    <string name="upi">UPI</string>
-    <string name="bharat_wallet">Bharateasy Wallet</string>
-    <string name="net_banking">Net Banking</string>
-    <string name="card">Card</string>
+    <string name="recents">Recents</string>
+    <string name="mobile_bill_payment">Mobile Bill Payment</string>
+    <string name="transaction_id">Transaction ID</string>
+    <string name="transaction_id_code">1234982H3r923</string>
+    <string name="okay">Okay</string>
+    <string name="download_invoice">Download Invoice</string>
+
+    <string name="lbl_select_plan">Select Plan</string>
+
+    <string name="lbl_username">Username</string>
+    <string name="company_name">JIO Prepaid</string>
+    <string name="location">Delhi &amp; NCR</string>
+    <string name="lbl_recharge_amount">Recharge with Amount</string>
+    <string name="lbl_rupee_symbol">₹</string>
+    <string name="lbl_plan_100">₹100</string>
+    <string name="lbl_plan_500">₹500</string>
+    <string name="lbl_plan_1000">₹1000</string>
+    <string name="lbl_plan_2000">₹2000</string>
+    <string name="lbl_recharge_with_plan">Or Recharge with Plan</string>
+    <string name="lbl_hint_search_plan">Search For A Plan EG 149 Or 29 Days</string>
+    <string name="lbl_plan_all">All</string>
+    <string name="lbl_unlimited">Unlimited</string>
+    <string name="lbl_plan_data">Data</string>
+    <string name="lbl_plan_combo">Combo</string>
+    <string name="lbl_plan_smart">Smart</string>
+
+
 
 
     <string-array name="dropdwon_jio">
