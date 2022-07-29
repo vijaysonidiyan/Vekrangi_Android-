@@ -13,6 +13,10 @@
     <string name="help">Help</string>
     <string name="faqs">FAQs</string>
     <string name="txt1">How to change payment options?</string>
+    <string name="txt2">How to change operator?</string>
+    <string name="txt3">How to use vouchers</string>
+    <string name="txt4">Lorem ipsum dolor sit amet</string>
+    <string name="btn_assitant">24X7 Assistance</string>
     <string name="lbl_services">Services</string>
     <string name="lbl_recharge_bill_payment">Recharge &amp; Bill Payments"'"s</string>
     <string name="lbl_health">Healtcare</string>
@@ -28,6 +32,8 @@
     <string name="p">P</string>
     <string name="your_contact">Your Contact</string>
     <string name="contact_no">+91 1234567890</string>
+    
+
 
     <string-array name="dropdwon_jio">
         <item>Jio PostPaid</item>

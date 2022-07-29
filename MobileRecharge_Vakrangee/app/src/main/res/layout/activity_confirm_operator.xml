@@ -28,10 +28,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="@string/mobile_recharge"
             android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_centerInParent="true"/>
+            android:textSize="15sp" />
 
         <ImageView
             android:id="@+id/ImgHelp"
