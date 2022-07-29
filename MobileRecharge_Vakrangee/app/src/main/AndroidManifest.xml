@@ -17,6 +17,15 @@
         android:theme="@style/Theme.MobileRecharge_Vakrangee"
         tools:targetApi="31">
         <activity
+            android:name=".MobileRecharge.SelectPlanActivityForMobileRecharge"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MobileBillPayment"
             android:exported="false" />
         <activity
@@ -41,7 +50,7 @@
             android:name=".MobileRecharge.Confirm_OperatorActivity"
             android:exported="false" />
         <activity
-            android:name=".MobileRecharge"
+            android:name=".MobileRecharge.MobileRecharge"
             android:exported="false"
             tools:ignore="MissingClass" />
         <activity
@@ -55,11 +64,11 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 
