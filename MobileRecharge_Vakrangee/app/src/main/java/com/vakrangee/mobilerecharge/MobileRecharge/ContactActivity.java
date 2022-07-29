@@ -77,9 +77,6 @@ public class ContactActivity extends AppCompatActivity {
                 item.setName(name);
                 item.setNumber(phoneNumber);
                 myContactsAdapter.addItem(item);
-
-                Log.d("TAG","Name--->"+name);
-                Log.d("TAG","phoneNumber--->"+phoneNumber);
             }
         }
         if(cursor!=null){

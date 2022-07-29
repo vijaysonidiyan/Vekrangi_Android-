@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="10dp"
+    android:padding="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
 
@@ -15,6 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/txt_label"
             android:layout_gravity="center"
             android:text="@string/p"
             android:fontFamily="@font/quicksandbold"
@@ -33,6 +34,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/txt_name"
             android:text="@string/your_contact"
             android:fontFamily="@font/quicksand_semi_bold"
             android:textSize="13sp"
@@ -41,6 +43,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/txt_contact"
             android:text="@string/contact_no"
             android:fontFamily="@font/quicksandmedium"
             android:textSize="12sp"
