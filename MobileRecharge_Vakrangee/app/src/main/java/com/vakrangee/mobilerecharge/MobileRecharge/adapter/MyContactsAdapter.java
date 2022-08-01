@@ -18,13 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyContactsAdapter extends RecyclerView.Adapter<MyContactsAdapter.Holder> {
-    private List<Contacts.ContactList> mContactLists;
+    private List<Contacts.ContactList> mContactLists = new ArrayList<>();
     private Context mContext;
     private String mKey;
     public MyContactsAdapter(Context applicationContext, String key) {
         mContext = applicationContext;
         mKey = key;
-        mContactLists = new ArrayList<>();
+
     }
 
 
@@ -33,6 +33,11 @@ public class MyContactsAdapter extends RecyclerView.Adapter<MyContactsAdapter.Ho
             mContactLists.add(item);
             notifyDataSetChanged();
         }
+    }
+
+    public void addList(List<Contacts.ContactList> ContactLists) {
+        mContactLists.addAll(ContactLists);
+        //notifyDataSetChanged();
     }
     @NonNull
     @Override
@@ -66,6 +71,9 @@ public class MyContactsAdapter extends RecyclerView.Adapter<MyContactsAdapter.Ho
         }
         return mContactLists.size();
     }
+
+
+
     public class Holder extends RecyclerView.ViewHolder {
         TextView txt_label,txt_name,txt_contact;
         CardView card_view,card_operator;

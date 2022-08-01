@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MobileRecharge.MobileRecharge">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/btnClick"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Button>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
