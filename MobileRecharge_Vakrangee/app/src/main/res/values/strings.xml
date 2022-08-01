@@ -38,9 +38,7 @@
     <string name="transaction_id_code">1234982H3r923</string>
     <string name="okay">Okay</string>
     <string name="download_invoice">Download Invoice</string>
-
     <string name="lbl_select_plan">Select Plan</string>
-
     <string name="lbl_username">Username</string>
     <string name="company_name">JIO Prepaid</string>
     <string name="location">Delhi &amp; NCR</string>
@@ -82,9 +80,6 @@
     <string name="price_500">₹500</string>
     <string name="price_1000">₹1000</string>
     <string name="price_2000">₹2000</string>
-
-
-
 
 
 

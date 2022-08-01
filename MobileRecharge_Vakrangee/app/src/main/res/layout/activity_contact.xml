@@ -45,144 +45,127 @@
             android:src="@drawable/help" />
     </RelativeLayout>
 
-    <ScrollView
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_mobile_number"
+        android:fontFamily="@font/quicksand_semi_bold"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black02"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/reactangle">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/backcolor"
+            android:text="@string/country_code"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:background="#E6E8EB"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:hint="@string/hint_enter_number_here"
+            android:textSize="13sp"
+            android:maxLength="10"
+            android:inputType="phone"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/card_view"
+            app:cardBackgroundColor="@color/backcolor"
+            app:cardCornerRadius="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_label"
+                android:layout_gravity="center"
+                android:text="@string/p"
+                android:fontFamily="@font/quicksandbold"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"/>
+
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginStart="10dp"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/enter_mobile_number"
+                android:id="@+id/txt_name"
+                android:text="@string/your_contact"
                 android:fontFamily="@font/quicksand_semi_bold"
-                android:textSize="15sp"
-                android:layout_marginTop="5dp"
+                android:textSize="13sp"
                 android:textColor="@color/black02"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                android:orientation="horizontal"
-                android:background="@drawable/reactangle">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/backcolor"
-                    android:text="@string/country_code"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:background="#E6E8EB"/>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="4dp"
-                    android:hint="@string/hint_enter_number_here"
-                    android:textSize="13sp"
-                    android:maxLength="10"
-                    android:inputType="phone"
-                    android:background="@android:color/transparent"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="15dp"
-                android:orientation="horizontal">
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/card_view"
-                    app:cardBackgroundColor="@color/backcolor"
-                    app:cardCornerRadius="25dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/txt_label"
-                        android:layout_gravity="center"
-                        android:text="@string/p"
-                        android:fontFamily="@font/quicksandbold"
-                        android:textSize="12sp"
-                        android:textColor="@android:color/white"/>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:orientation="vertical"
-                    android:layout_gravity="center_vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/txt_name"
-                        android:text="@string/your_contact"
-                        android:fontFamily="@font/quicksand_semi_bold"
-                        android:textSize="13sp"
-                        android:textColor="@color/black02"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/txt_contact"
-                        android:text="@string/contact_no"
-                        android:fontFamily="@font/quicksandmedium"
-                        android:textSize="12sp"
-                        android:textColor="@color/backcolor"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/recents"
+                android:id="@+id/txt_contact"
+                android:text="@string/contact_no"
                 android:fontFamily="@font/quicksandmedium"
-                android:textSize="15sp"
-                android:textColor="@color/black02"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/recycle_recent"
-                android:background="@drawable/recycle_view_bg"
-                android:layout_marginVertical="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/my_contact"
-                android:fontFamily="@font/quicksandmedium"
-                android:textSize="15sp"
-                android:textColor="@color/black02"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/recycle_view_bg"
-                android:id="@+id/recycle_contacts"
-                android:layout_marginVertical="10dp"/>
+                android:textSize="12sp"
+                android:textColor="@color/backcolor"/>
 
         </LinearLayout>
-    </ScrollView>
 
+    </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recents"
+        android:fontFamily="@font/quicksandmedium"
+        android:textSize="15sp"
+        android:textColor="@color/black02"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycle_recent"
+        android:background="@drawable/recycle_view_bg"
+        android:layout_marginVertical="10dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_contact"
+        android:fontFamily="@font/quicksandmedium"
+        android:textSize="15sp"
+        android:textColor="@color/black02"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/recycle_view_bg"
+        android:id="@+id/recycle_contacts"
+        android:layout_marginVertical="10dp"/>
 
   </LinearLayout>

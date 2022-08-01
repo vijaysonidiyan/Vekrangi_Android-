@@ -19,10 +19,10 @@
         <activity
             android:name=".MobileBillPayment.ContactOperatorActivity"
             android:exported="true" >
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".MobileBillPayment.MobileBillPayment"
@@ -42,11 +42,11 @@
         </activity>
         <activity
             android:name=".MobileRecharge.ContactActivity"
-            android:exported="false">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
 
         </activity>
         <activity
@@ -57,12 +57,22 @@
             android:exported="false"
             tools:ignore="MissingClass" />
         <activity
+            android:name=".MobileRecharge.Mobile_Recharge_PaymentActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".BaseActivity"
             android:exported="false"
             tools:ignore="MissingClass" />
         <activity
             android:name=".electricityBill.activities.ElectricityBillActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".MainActivity"

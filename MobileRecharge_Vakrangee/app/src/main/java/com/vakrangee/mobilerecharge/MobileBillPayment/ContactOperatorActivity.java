@@ -3,7 +3,6 @@ package com.vakrangee.mobilerecharge.MobileBillPayment;
 import static android.Manifest.permission.READ_CONTACTS;
 import static android.Manifest.permission.WRITE_CONTACTS;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -40,8 +38,6 @@ public class ContactOperatorActivity extends AppCompatActivity {
     private Cursor cursor;
     private List<Contacts.ContactList> mContactLists;
     Random rnd = new Random();
-    private ProgressDialog mProgressDialog;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +48,7 @@ public class ContactOperatorActivity extends AppCompatActivity {
 
     private void initialization() {
         mContactLists = new ArrayList<>();
+
 
         layoutManagerRecent = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         layoutManagerContact = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
@@ -65,9 +62,6 @@ public class ContactOperatorActivity extends AppCompatActivity {
         recyclerRecent.setLayoutManager(layoutManagerRecent);
         recyclerContacts.setLayoutManager(layoutManagerContact);
 
-        recyclerRecent.setNestedScrollingEnabled(false);
-        recyclerContacts.setNestedScrollingEnabled(false);
-
         recyclerRecent.setAdapter(mRecentAdapter);
         recyclerContacts.setAdapter(myContactsAdapter);
 
@@ -79,12 +73,14 @@ public class ContactOperatorActivity extends AppCompatActivity {
     }
 
     private void getContacts() {
-        showDialog();
         cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
         if ((cursor != null ? cursor.getCount() : 0) > 0) {
             while (cursor.moveToNext()) {
                 @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                 @SuppressLint("Range") String phoneNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                //@SuppressLint("Range") String provider = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.));
+
+                //Log.d("TAG","provider--->"+provider);
 
                 int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
                 Contacts.ContactList item = new Contacts.ContactList();
@@ -95,13 +91,12 @@ public class ContactOperatorActivity extends AppCompatActivity {
             }
         }
         if(cursor!=null){
-            mProgressDialog.dismiss();
             cursor.close();
         }
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case PERMISSION_REQUEST_CODE:
@@ -154,11 +149,5 @@ public class ContactOperatorActivity extends AppCompatActivity {
                 .setNegativeButton("Cancel", null)
                 .create()
                 .show();
-    }
-
-    private void showDialog(){
-        mProgressDialog = new ProgressDialog(this);
-        mProgressDialog.setMessage("Please Wait....");
-        mProgressDialog.show();
     }
 }
