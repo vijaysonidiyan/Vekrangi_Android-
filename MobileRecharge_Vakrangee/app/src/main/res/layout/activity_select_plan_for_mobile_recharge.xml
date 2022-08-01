@@ -35,27 +35,28 @@
 
 
         >
+
         <TextView
+            android:id="@+id/txtBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:id="@+id/txtBack"
-            android:text="@string/back"
             android:fontFamily="@font/quicksandmedium"
-            android:textColor="@color/backcolor"
-            android:textAlignment="center"
-            android:textSize="12sp"
             android:paddingVertical="3dp"
+            android:text="@string/back"
+            android:textAlignment="center"
+            android:textColor="@color/backcolor"
+            android:textSize="12sp"
             app:drawableLeftCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_select_plan"
+            android:layout_centerInParent="true"
             android:fontFamily="@font/quicksand_semi_bold"
-            android:textSize="15sp"
+            android:text="@string/lbl_select_plan"
             android:textColor="@color/black"
-            android:layout_centerInParent="true"/>
+            android:textSize="15sp" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -91,8 +92,8 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
                                 android:layout_gravity="center"
                                 android:src="@drawable/icon_jio"/>
                             <LinearLayout
@@ -109,7 +110,7 @@
 
 
                                     android:fontFamily="@font/quicksandbold"
-                                    android:text="Username"
+                                    android:text="@string/lbl_username"
                                     android:textColor="@color/black02"
                                     android:textSize="17sp" />
                                 <TextView
@@ -117,10 +118,10 @@
                                     android:layout_height="wrap_content"
 
 
-                                    android:fontFamily="@font/quicksandbold"
-                                    android:text="+91 1234567890"
+                                    android:fontFamily="@font/quicksand_semi_bold"
+                                    android:text="@string/contact_no"
                                     android:textColor="@color/bg_reachge_header_black"
-                                    android:textSize="10sp" />
+                                    android:textSize="12sp" />
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -133,7 +134,7 @@
 
 
                                         android:fontFamily="@font/quicksandbold"
-                                        android:text="Jio Prepaid"
+                                        android:text="@string/company_name"
                                         android:textColor="@color/bg_textcolor_back"
                                         android:textSize="12sp" />
                                     <TextView
@@ -143,7 +144,7 @@
 
 
                                         android:fontFamily="@font/quicksandbold"
-                                        android:text="Delhi NCR"
+                                        android:text="location"
                                         android:textColor="@color/bg_textcolor_back"
                                         android:textSize="12sp" />
 
@@ -168,8 +169,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recharge with Amount"
-            android:fontFamily="@font/quicksand_semi_bold"
+            android:text="@string/lbl_recharge_amount"
+            android:fontFamily="@font/quicksandmedium"
             android:textSize="15sp"
             android:layout_marginTop="5dp"
             android:textColor="@color/black02"/>
@@ -188,7 +189,8 @@
                 android:textColor="@color/backcolor"
                 android:textSize="15sp"
                 android:padding="10dp"
-                android:text="700"/>
+                android:fontFamily="@font/quicksandmedium"
+                android:text="@string/lbl_rupee_symbol"/>
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
@@ -200,9 +202,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:hint="enter emount"
+                android:hint="@string/hint_enter_amount"
                 android:inputType="number"
                 android:maxLength="10"
+                android:fontFamily="@font/quicksand_semi_bold"
                 android:padding="10dp"
                 android:textSize="13sp" />
 
@@ -221,13 +224,17 @@
                 android:padding="3dp"
                 android:textColor="@color/bg_bottom_nav"
                 android:background="@drawable/bg_dashboard_haeader_white"
-                android:text="100"/>
+                android:textSize="13sp"
+                android:fontFamily="@font/quicksand_semi_bold"
+                android:text="@string/lbl_plan_100"/>
 
             <TextView
                 android:layout_width="65dp"
                 android:layout_height="26dp"
                 android:background="@drawable/bg_dashboard_haeader_white"
-                android:text="500"
+                android:textSize="13sp"
+                android:fontFamily="@font/quicksand_semi_bold"
+                android:text="@string/lbl_plan_500"
                 android:textAlignment="center"
                 android:layout_marginLeft="10dp"
                 android:padding="3dp"
@@ -237,7 +244,9 @@
                 android:layout_width="65dp"
                 android:layout_height="26dp"
                 android:background="@drawable/bg_dashboard_haeader_white"
-                android:text="1000"
+                android:textSize="13sp"
+                android:fontFamily="@font/quicksand_semi_bold"
+                android:text="@string/lbl_plan_1000"
                 android:textAlignment="center"
                 android:layout_marginLeft="10dp"
                 android:padding="3dp"
@@ -247,7 +256,9 @@
                 android:layout_width="65dp"
                 android:layout_height="26dp"
                 android:background="@drawable/bg_dashboard_haeader_white"
-                android:text="2000"
+                android:textSize="13sp"
+                android:fontFamily="@font/quicksand_semi_bold"
+                android:text="@string/lbl_plan_2000"
                 android:layout_marginLeft="10dp"
                 android:padding="3dp"
                 android:textAlignment="center"
@@ -270,7 +281,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Or Recharge with Plan"
+            android:text="@string/lbl_recharge_with_plan"
             android:fontFamily="@font/quicksand_semi_bold"
             android:textSize="15sp"
             android:layout_marginTop="5dp"
@@ -298,7 +309,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:hint="Search For A Plan Eg 149 Or 29 Days"
+                android:hint="@string/lbl_hint_search_plan"
                 android:inputType="number"
                 android:fontFamily="@font/quicksandmedium"
 
@@ -307,54 +318,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp">
 
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="26dp"
-                android:textAlignment="center"
-                android:padding="3dp"
-                android:textColor="@color/bg_bottom_nav"
-                android:background="@drawable/bg_dashboard_haeader_white"
-                android:text="100"/>
-
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="26dp"
-                android:background="@drawable/bg_dashboard_haeader_white"
-                android:text="500"
-                android:textAlignment="center"
-                android:layout_marginLeft="10dp"
-                android:padding="3dp"
-                android:textColor="@color/bg_bottom_nav"
-                />
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="26dp"
-                android:background="@drawable/bg_dashboard_haeader_white"
-                android:text="1000"
-                android:textAlignment="center"
-                android:layout_marginLeft="10dp"
-                android:padding="3dp"
-                android:textColor="@color/bg_bottom_nav"
-                />
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="26dp"
-                android:background="@drawable/bg_dashboard_haeader_white"
-                android:text="2000"
-                android:layout_marginLeft="10dp"
-                android:padding="3dp"
-                android:textAlignment="center"
-                android:textColor="@color/bg_bottom_nav"
-                />
-
-
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -365,18 +329,20 @@
                 android:layout_height="wrap_content"
 
                 >
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
 
                     >
+
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/icon_recharge_type"
-                        />
+                        android:src="@drawable/icon_recharge_type" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -387,10 +353,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:padding="10dp"
+                            android:fontFamily="@font/quicksand_regular"
 
-                            android:fontFamily="@font/quicksandmedium"
-                            android:text="All"
+                            android:padding="10dp"
+                            android:text="@string/lbl_plan_all"
                             android:textColor="@color/white"
                             android:textSize="16sp" />
 
@@ -406,13 +372,32 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:padding="10dp"
                             android:fontFamily="@font/quicksandmedium"
-                            android:text="Unlimited"
+                            android:padding="10dp"
+                            android:text="@string/lbl_unlimited"
                             android:textColor="@color/bg_reachge_header_black"
                             android:textSize="16sp" />
 
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/bg_dashboard_haeader_white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/quicksandmedium"
+                            android:padding="10dp"
+                            android:text="@string/lbl_plan_data"
+                            android:textColor="@color/bg_reachge_header_black"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -423,13 +408,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:padding="10dp"
                             android:fontFamily="@font/quicksandmedium"
-                            android:text="Data"
+                            android:padding="10dp"
+                            android:text="@string/lbl_plan_combo"
                             android:textColor="@color/bg_reachge_header_black"
                             android:textSize="16sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -440,26 +426,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:padding="10dp"
                             android:fontFamily="@font/quicksandmedium"
-                            android:text="Combo"
-                            android:textColor="@color/bg_reachge_header_black"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/bg_dashboard_haeader_white">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:padding="10dp"
-                            android:fontFamily="@font/quicksandmedium"
-                            android:text="Smart"
+                            android:text="@string/lbl_plan_smart"
                             android:textColor="@color/bg_reachge_header_black"
                             android:textSize="16sp" />
 

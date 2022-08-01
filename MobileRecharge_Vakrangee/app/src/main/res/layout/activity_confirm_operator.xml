@@ -29,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:fontFamily="@font/quicksand_semi_bold"
             android:text="@string/mobile_recharge"
             android:textColor="@color/black"
             android:textSize="15sp" />
@@ -48,9 +49,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/enter_mobile_number"
-            android:fontFamily="@font/quicksand_semi_bold"
+            android:fontFamily="@font/quicksandmedium"
             android:textSize="15sp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:textColor="@color/black02"/>
 
         <LinearLayout
@@ -65,6 +66,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/backcolor"
+                android:fontFamily="@font/quicksandmedium"
+                android:textSize="15sp"
                 android:text="@string/country_code"/>
             <View
                 android:layout_width="1dp"
@@ -78,9 +81,10 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:inputType="number"
+                android:fontFamily="@font/quicksand_semi_bold"
                 android:hint="@string/hint_enter_number_here"
                 android:maxLength="10"
-                android:textSize="13sp"
+                android:textSize="15sp"
                 android:background="@android:color/transparent"/>
 
         </LinearLayout>
@@ -89,9 +93,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/operator"
-        android:fontFamily="@font/quicksand_semi_bold"
+        android:visibility="gone"
+        android:fontFamily="@font/quicksandmedium"
         android:textSize="15sp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/black02"/>
 
     <LinearLayout
@@ -99,12 +104,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:padding="10dp"
+        android:visibility="gone"
         android:orientation="horizontal"
         android:background="@drawable/reactangle">
 
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/icon_jio"/>
 
         <Spinner
@@ -114,14 +120,147 @@
             android:layout_gravity="center" />
 
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/operator"
+        android:fontFamily="@font/quicksandmedium"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black02"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+
+        android:layout_marginTop="10dp"
+        android:background="@drawable/select_type_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/onclickSelectType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/select_type_bg">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/selected_operator"
+                android:visibility="gone"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/selectTypeOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_toRightOf="@id/selected_operator"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/quicksandmedium"
+                android:padding="15dp"
+                android:text="Select Operator"
+                android:textColor="@color/backcolor"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignRight="@id/selectTypeOptionText"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_down_arrow" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/expandView"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lin_jio"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+
+
+                    android:src="@drawable/icon_jio"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_jio"
+                    android:text="Jio Postpaid"
+                    android:layout_marginLeft="20dp"
+
+                    android:fontFamily="@font/quicksandmedium"
+                    android:textSize="15sp"
+
+                    android:textColor="@color/black02"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="#393939" />
+            <LinearLayout
+                android:id="@+id/lin_airtel"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+
+
+                    android:src="@drawable/icon_jio"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_airtel"
+                    android:text="Airtel"
+                    android:layout_marginLeft="20dp"
+
+                    android:fontFamily="@font/quicksandmedium"
+                    android:textSize="15sp"
+
+                    android:textColor="@color/black02"/>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/area_circle"
-        android:fontFamily="@font/quicksand_semi_bold"
+        android:fontFamily="@font/quicksandmedium"
         android:textSize="15sp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/black02"/>
 
     <LinearLayout
@@ -145,8 +284,9 @@
             android:text="@string/delhi_ncr"
             android:textColor="@color/bg_textcolor_back"
             android:layout_gravity="center"
+            android:fontFamily="@font/quicksand_semi_bold"
             android:layout_margin="10dp"
-            android:textSize="14sp"/>
+            android:textSize="13sp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -155,6 +295,7 @@
             android:textSize="15sp"
             android:gravity="end"
             android:textColor="@color/bg_textcolor_back"
+            android:fontFamily="@font/quicksand_semi_bold"
             android:layout_gravity="center"/>
 
     </LinearLayout>
@@ -163,10 +304,12 @@
         android:id="@+id/BtnConfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:textAllCaps="false"
         android:background="@drawable/btn_reactangle"
         android:text="@string/Confirm_Proceed"
+        android:fontFamily="@font/quicksand_semi_bold"
+        android:textSize="16sp"
         android:textColor="@color/white"/>
 
 

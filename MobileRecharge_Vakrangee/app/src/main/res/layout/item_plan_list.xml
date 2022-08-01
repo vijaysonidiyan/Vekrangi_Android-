@@ -18,14 +18,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/tv_plan_price"
+           android:gravity="center"
 
             android:background="@color/bg_selectplan_amount"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
+
             android:fontFamily="@font/quicksandbold"
-            android:text="299"
+            android:text="@string/lbl_plan_699"
             android:textColor="@color/bg_textcolor_new"
             android:textSize="22sp" />
         <LinearLayout
@@ -43,8 +41,8 @@
                 android:id="@+id/tv_plan_title"
 
 
-                android:fontFamily="@font/quicksandbold"
-                android:text="Get 12 GB Data"
+                android:fontFamily="@font/quicksand_semi_bold"
+                android:text="@string/lbl_get_plan_title"
                 android:textColor="@color/black02"
                 android:textSize="16sp" />
             <TextView
@@ -52,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_plan_validity"
 
-                android:fontFamily="@font/quicksandbold"
+                android:fontFamily="@font/quicksand_semi_bold"
                 android:text="Validity 28 Days"
                 android:textColor="@color/bg_reachge_header_black"
                 android:textSize="16sp" />

@@ -18,7 +18,7 @@
     <string name="txt4">Lorem ipsum dolor sit amet</string>
     <string name="btn_assitant">24X7 Assistance</string>
     <string name="lbl_services">Services</string>
-    <string name="lbl_recharge_bill_payment">Recharge &amp; Bill Payments"'"s</string>
+    <string name="lbl_recharge_bill_payment">Recharge &amp; Bill Payments</string>
     <string name="lbl_health">Healtcare</string>
     <string name="lbl_recarge_number">Recharge \n Number</string>
     <string name="lbl_postpaid_bill">Postpaid \n Bill</string>
@@ -44,10 +44,10 @@
     <string name="location">Delhi &amp; NCR</string>
     <string name="lbl_recharge_amount">Recharge with Amount</string>
     <string name="lbl_rupee_symbol">₹</string>
-    <string name="lbl_plan_100">₹100</string>
-    <string name="lbl_plan_500">₹500</string>
-    <string name="lbl_plan_1000">₹1000</string>
-    <string name="lbl_plan_2000">₹2000</string>
+    <string name="lbl_plan_100">₹ 100</string>
+    <string name="lbl_plan_500">₹ 500</string>
+    <string name="lbl_plan_1000">₹ 1000</string>
+    <string name="lbl_plan_2000">₹ 2000</string>
     <string name="lbl_recharge_with_plan">Or Recharge with Plan</string>
     <string name="lbl_hint_search_plan">Search For A Plan EG 149 Or 29 Days</string>
     <string name="lbl_plan_all">All</string>
@@ -80,6 +80,10 @@
     <string name="price_500">₹500</string>
     <string name="price_1000">₹1000</string>
     <string name="price_2000">₹2000</string>
+
+    <string name="lbl_plan_699">₹500</string>
+    <string name="lbl_get_plan_title">Get 12 GB Data</string>
+    <string name="lbl_plan_validity">Validity 28 Days</string>
 
 
 

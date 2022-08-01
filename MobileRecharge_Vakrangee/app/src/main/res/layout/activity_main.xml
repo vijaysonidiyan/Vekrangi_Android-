@@ -99,14 +99,22 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@drawable/bgr_recharge_header">
+                    android:background="@drawable/bgr_recharge_header"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/icon_recharge_header"
+                        android:layout_marginLeft="10dp"
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:fontFamily="@font/quicksandmedium"
                         android:text="@string/lbl_recharge_bill_payment"
                         android:textColor="@color/white"

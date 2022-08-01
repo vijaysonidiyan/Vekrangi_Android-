@@ -27,10 +27,10 @@ public class SelectPlanActivityForMobileRecharge extends AppCompatActivity {
         layoutManagerPlan = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         rvPlans.setLayoutManager(layoutManagerPlan);
         ArrayList<MobileRechargePlansModel> mobileRechargePlansModels = new ArrayList<MobileRechargePlansModel>();
-        mobileRechargePlansModels.add(new MobileRechargePlansModel("699","Get 12 GB Data","Validity 28 Days"));
-        mobileRechargePlansModels.add(new MobileRechargePlansModel("699","Get 12 GB Data","Validity 28 Days"));
-        mobileRechargePlansModels.add(new MobileRechargePlansModel("699","Get 12 GB Data","Validity 28 Days"));
-        mobileRechargePlansModels.add(new MobileRechargePlansModel("699","Get 12 GB Data","Validity 28 Days"));
+        mobileRechargePlansModels.add(new MobileRechargePlansModel("₹ 699","Get 12 GB Data","Validity 28 Days"));
+        mobileRechargePlansModels.add(new MobileRechargePlansModel("₹ 699","Get 12 GB Data","Validity 28 Days"));
+        mobileRechargePlansModels.add(new MobileRechargePlansModel("₹ 699","Get 12 GB Data","Validity 28 Days"));
+        mobileRechargePlansModels.add(new MobileRechargePlansModel("₹ 699","Get 12 GB Data","Validity 28 Days"));
 
         PlanForMobileRechargeAdapter adapter = new PlanForMobileRechargeAdapter(mobileRechargePlansModels,this);
         rvPlans.setAdapter(adapter);

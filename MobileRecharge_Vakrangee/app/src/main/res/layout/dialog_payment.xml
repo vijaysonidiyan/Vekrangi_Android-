@@ -34,7 +34,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dp"
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
@@ -70,6 +71,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/lin_transaction"
                 android:layout_gravity="center_horizontal"
+                android:background="@color/bg_tv_transaction"
+                android:padding="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -86,6 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:text="@string/transaction_id_code"
+
                     android:fontFamily="@font/quicksand"
                     android:textSize="14sp"
                     android:textColor="@color/black39"
@@ -96,23 +100,23 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/txt_invoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_invoice"
-            android:padding="10dp"
             android:layout_above="@+id/txt_action"
-            android:text="@string/download_invoice"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/quicksand_semi_bold"
-            android:textSize="14sp"
+            android:padding="10dp"
+            android:text="@string/download_invoice"
             android:textColor="@color/backcolor"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="14sp" />
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/txt_action"
-            android:layout_marginVertical="20dp"
+            android:layout_marginVertical="40dp"
             android:layout_marginHorizontal="10dp"
             android:layout_alignParentBottom="true"
             android:fontFamily="@font/quicksand_semi_bold"
