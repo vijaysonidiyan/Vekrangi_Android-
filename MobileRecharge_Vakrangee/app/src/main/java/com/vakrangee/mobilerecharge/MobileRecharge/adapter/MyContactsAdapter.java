@@ -1,9 +1,12 @@
 package com.vakrangee.mobilerecharge.MobileRecharge.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,8 +20,9 @@ import com.vakrangee.mobilerecharge.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyContactsAdapter extends RecyclerView.Adapter<MyContactsAdapter.Holder> {
+public class MyContactsAdapter extends RecyclerView.Adapter<MyContactsAdapter.Holder> implements Filterable {
     private List<Contacts.ContactList> mContactLists = new ArrayList<>();
+    private List<Contacts.ContactList> mFilterContactLists = new ArrayList<>();
     private Context mContext;
     private String mKey;
     public MyContactsAdapter(Context applicationContext, String key) {
@@ -37,7 +41,8 @@ public class MyContactsAdapter extends RecyclerView.Adapter<MyContactsAdapter.Ho
 
     public void addList(List<Contacts.ContactList> ContactLists) {
         mContactLists.addAll(ContactLists);
-        //notifyDataSetChanged();
+        mFilterContactLists.addAll(ContactLists);
+        notifyDataSetChanged();
     }
     @NonNull
     @Override
@@ -48,7 +53,7 @@ public class MyContactsAdapter extends RecyclerView.Adapter<MyContactsAdapter.Ho
 
     @Override
     public void onBindViewHolder(@NonNull MyContactsAdapter.Holder holder, int position) {
-        if (mContactLists != null && mContactLists.size()>0){
+        if (mFilterContactLists != null && mFilterContactLists.size()>0){
 
             if (mKey.equals(Constant.key_operator)){
                 holder.card_operator.setVisibility(View.VISIBLE);
@@ -56,7 +61,7 @@ public class MyContactsAdapter extends RecyclerView.Adapter<MyContactsAdapter.Ho
                 holder.card_operator.setVisibility(View.GONE);
             }
 
-            Contacts.ContactList item = mContactLists.get(position);
+            Contacts.ContactList item = mFilterContactLists.get(position);
             holder.txt_label.setText(item.getName().substring(0,1));
             holder.txt_name.setText(item.getName());
             holder.txt_contact.setText(item.getNumber());
@@ -69,9 +74,44 @@ public class MyContactsAdapter extends RecyclerView.Adapter<MyContactsAdapter.Ho
         if (mContactLists == null){
             mContactLists = new ArrayList<>();
         }
-        return mContactLists.size();
+        //return Math.min(mContactLists.size(), 50);
+        return mFilterContactLists.size();
     }
 
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String charString = charSequence.toString();
+
+                if (charString.isEmpty()) {
+                    mFilterContactLists = mContactLists;
+                } else {
+                    List<Contacts.ContactList> filteredList = new ArrayList<>();
+                    for (Contacts.ContactList row : mContactLists) {
+
+                        Log.d("TAG","Filter--->"+charString);
+                        if (row.getNumber().contains(charString.toString()) ) {
+                            filteredList.add(row);
+                        }
+                    }
+
+                    mFilterContactLists = filteredList;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = mFilterContactLists;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                mFilterContactLists = (ArrayList<Contacts.ContactList>) filterResults.values;
+                notifyDataSetChanged();
+            }
+        };
+    }
 
 
     public class Holder extends RecyclerView.ViewHolder {

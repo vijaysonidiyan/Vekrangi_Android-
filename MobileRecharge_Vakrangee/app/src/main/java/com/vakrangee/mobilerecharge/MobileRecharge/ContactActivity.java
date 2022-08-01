@@ -18,9 +18,12 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -43,6 +46,7 @@ import java.util.Random;
 public class ContactActivity extends AppCompatActivity implements ClickEvent {
     private static final int PERMISSION_REQUEST_CODE = 200;
     ImageView imgHelp;
+    EditText edtNumber;
     RecyclerView recyclerRecent,recyclerContacts;
     RecyclerView.LayoutManager layoutManagerRecent,layoutManagerContact;
     ProgressBar mProgressBar;
@@ -80,6 +84,9 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
 
         imgHelp = findViewById(R.id.imgHelp);
         imgHelp.setSelected(false);
+
+        edtNumber = findViewById(R.id.edtNumber);
+        edtNumber.addTextChangedListener(textWatcher);
 
         recyclerRecent.setLayoutManager(layoutManagerRecent);
         recyclerContacts.setLayoutManager(layoutManagerContact);
@@ -230,6 +237,24 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
             payments_dialog(view.isSelected());
         }
     }
+
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            Log.d("TAG","String--->"+charSequence);
+            myContactsAdapter.getFilter().filter(charSequence.toString());
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private void payments_dialog(boolean b) {
