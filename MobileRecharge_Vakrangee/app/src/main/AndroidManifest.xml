@@ -19,10 +19,10 @@
         <activity
             android:name=".MobileBillPayment.ContactOperatorActivity"
             android:exported="true" >
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity
             android:name=".MobileBillPayment"
@@ -42,11 +42,11 @@
         </activity>
         <activity
             android:name=".MobileRecharge.ContactActivity"
-            android:exported="true">
-            <intent-filter>
+            android:exported="false">
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
 
         </activity>
         <activity
@@ -62,7 +62,7 @@
             tools:ignore="MissingClass" />
         <activity
             android:name=".electricityBill.activities.ElectricityBillActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".MainActivity"

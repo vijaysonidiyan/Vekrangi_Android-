@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -45,6 +46,7 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
     Cursor cursor;
     List<Contacts.ContactList> mContactLists;
     Random rnd = new Random();
+    private ProgressDialog mProgressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +58,6 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
     private void initialization() {
         mContactLists = new ArrayList<>();
 
-
         layoutManagerRecent = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         layoutManagerContact = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
 
@@ -65,6 +66,7 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
 
         recyclerRecent = findViewById(R.id.recycle_recent);
         recyclerContacts = findViewById(R.id.recycle_contacts);
+        recyclerContacts.setNestedScrollingEnabled(true);
 
         imgHelp = findViewById(R.id.imgHelp);
         imgHelp.setSelected(false);
@@ -83,6 +85,8 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
     }
 
     private void getContacts() {
+
+        showDialog();
         cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
         if ((cursor != null ? cursor.getCount() : 0) > 0) {
             while (cursor.moveToNext()) {
@@ -98,6 +102,7 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
             }
         }
         if(cursor!=null){
+            mProgressDialog.dismiss();
             cursor.close();
         }
     }
@@ -201,5 +206,10 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
         dialog.show();
     }
 
+    private void showDialog(){
+        mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setMessage("Please Wait....");
+        mProgressDialog.show();
+    }
 
 }
