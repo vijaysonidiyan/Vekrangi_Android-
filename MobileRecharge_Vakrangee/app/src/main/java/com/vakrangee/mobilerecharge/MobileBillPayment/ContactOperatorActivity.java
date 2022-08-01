@@ -25,6 +25,7 @@ import com.vakrangee.mobilerecharge.MobileRecharge.models.Contacts;
 import com.vakrangee.mobilerecharge.R;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 
@@ -73,25 +74,58 @@ public class ContactOperatorActivity extends AppCompatActivity {
     }
 
     private void getContacts() {
-        cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
-        if ((cursor != null ? cursor.getCount() : 0) > 0) {
-            while (cursor.moveToNext()) {
-                @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-                @SuppressLint("Range") String phoneNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                //@SuppressLint("Range") String provider = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.));
+        String[] projection = new String[] {
+                ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
+                ContactsContract.CommonDataKinds.Phone.NUMBER,
+                ContactsContract.CommonDataKinds.Phone.NORMALIZED_NUMBER,
+                //plus any other properties you wish to query
+        };
 
-                //Log.d("TAG","provider--->"+provider);
-
-                int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
-                Contacts.ContactList item = new Contacts.ContactList();
-                item.setName(name);
-                item.setNumber(phoneNumber);
-                item.setColor(color);
-                myContactsAdapter.addItem(item);
-            }
+        Cursor cursor = null;
+        try {
+            cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, projection, null, null, null);
+        } catch (SecurityException e) {
+            //SecurityException can be thrown if we don't have the right permissions
         }
-        if(cursor!=null){
-            cursor.close();
+
+        if (cursor != null) {
+            try {
+                HashSet<String> normalizedNumbersAlreadyFound = new HashSet<>();
+                int indexOfNormalizedNumber = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NORMALIZED_NUMBER);
+                int indexOfDisplayName = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME);
+                int indexOfDisplayNumber = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
+
+                while (cursor.moveToNext()) {
+                    String normalizedNumber = cursor.getString(indexOfNormalizedNumber);
+                    if (normalizedNumbersAlreadyFound.add(normalizedNumber)) {
+                        String displayName = cursor.getString(indexOfDisplayName);
+                        String displayNumber = cursor.getString(indexOfDisplayNumber);
+
+                        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+                        Contacts.ContactList item = new Contacts.ContactList();
+                        item.setName(displayName);
+                        item.setNumber(displayNumber);
+                        item.setColor(color);
+                        //myContactsAdapter.addItem(item);
+                        mContactLists.add(item);
+
+                        //haven't seen this number yet: do something with this contact!
+                    } else {
+                        //don't do anything with this contact because we've already found this number
+                    }
+                }
+            } finally {
+                //upDateUI(false);
+                if (mContactLists.size()>0){
+                    myContactsAdapter.addList(mContactLists);
+                    myContactsAdapter.notifyDataSetChanged();
+                    //myContactsAdapter = new MyContactsAdapter(getApplicationContext(),Constant.key_contact,mContactLists);
+                    //recyclerContacts.setAdapter(myContactsAdapter);
+                }
+                // dialog.dismiss();
+
+                cursor.close();
+            }
         }
     }
 

@@ -19,10 +19,7 @@
         <activity
             android:name=".MobileBillPayment.ContactOperatorActivity"
             android:exported="false" >
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+
         </activity>
         <activity
             android:name=".MobileBillPayment.MobileBillPayment"
@@ -40,15 +37,15 @@
 
         <activity
             android:name=".MobileRecharge.Mobile_Recharge_PaymentActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".MobileRecharge.ContactActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".MobileRecharge.ContactActivity"
-            android:exported="false">
         </activity>
         <activity
             android:name=".MobileRecharge.Confirm_OperatorActivity"
