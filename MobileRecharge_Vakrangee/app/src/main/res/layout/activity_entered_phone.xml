@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MobileBillPayment.Entered_phoneActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_24"
+            android:fontFamily="@font/quicksandmedium"
+            android:paddingVertical="3dp"
+            android:text="@string/back"
+            android:textAlignment="gravity"
+            android:textColor="@color/bg_textcolor_back"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/quicksand_semi_bold"
+            android:text="@string/mobile_bill_payment"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/ImgHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/icon_help"/>
+
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_mobile_number"
+        android:fontFamily="@font/quicksand_semi_bold"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black02"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/reactangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/backcolor"
+            android:padding="2dp"
+            android:text="@string/country_code"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:background="#E6E8EB"/>
+
+        <EditText
+            android:id="@+id/EditNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:inputType="number"
+            android:hint="@string/hint_enter_number_here"
+            android:maxLength="10"
+            android:textSize="13sp"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/operator"
+        android:fontFamily="@font/quicksand_semi_bold"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black02"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/reactangle">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/icon_jio"/>
+
+        <Spinner
+            android:id="@+id/SpinnerJio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amount"
+        android:fontFamily="@font/quicksand_semi_bold"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black02"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/reactangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/backcolor"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:text="@string/payment_sign"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:background="#E6E8EB"/>
+
+        <EditText
+            android:id="@+id/EditPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_enter_amount"
+            android:inputType="number"
+            android:maxLength="10"
+            android:padding="10dp"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="26dp"
+            android:background="@drawable/btn_amount"
+            android:textAlignment="center"
+            android:padding="3dp"
+            android:textColor="@color/bg_bottom_nav"
+            android:text="@string/price"/>
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="26dp"
+            android:background="@drawable/btn_amount"
+            android:textAlignment="center"
+            android:layout_marginLeft="10dp"
+            android:padding="3dp"
+            android:textColor="@color/bg_bottom_nav"
+            android:text="@string/price_500"/>
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="26dp"
+            android:background="@drawable/btn_amount"
+            android:textAlignment="center"
+            android:layout_marginLeft="10dp"
+            android:padding="3dp"
+            android:textColor="@color/bg_bottom_nav"
+            android:text="@string/price_1000"/>
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="26dp"
+            android:background="@drawable/btn_amount"
+            android:layout_marginLeft="10dp"
+            android:padding="3dp"
+            android:textAlignment="center"
+            android:textColor="@color/bg_bottom_nav"
+            android:text="@string/price_2000"/>
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BtnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_reactangle"
+        android:text="@string/amount_proceed"
+        android:textSize="16sp"
+        android:fontFamily="@font/quicksand_semi_bold"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MobileBillPayment"
+            android:name=".MobileBillPayment.MobileBillPayment"
             android:exported="false" />
         <activity
             android:name=".HelpAdapter"
@@ -53,7 +53,7 @@
             android:name=".MobileRecharge.Confirm_OperatorActivity"
             android:exported="false" />
         <activity
-            android:name=".MobileRecharge"
+            android:name=".MobileRecharge.MobileRecharge"
             android:exported="false"
             tools:ignore="MissingClass" />
         <activity
