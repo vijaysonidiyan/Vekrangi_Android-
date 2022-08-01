@@ -36,7 +36,7 @@ public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.Holder> {
 
     @Override
     public int getItemCount() {
-        return 1;
+        return 2;
     }
 
     public class Holder extends RecyclerView.ViewHolder {

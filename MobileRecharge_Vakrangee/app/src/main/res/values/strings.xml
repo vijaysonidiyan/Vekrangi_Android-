@@ -80,6 +80,11 @@
     <string name="price_500">₹500</string>
     <string name="price_1000">₹1000</string>
     <string name="price_2000">₹2000</string>
+    <string name="username">Username</string>
+    <string name="change_plan">Change Plan</string>
+    <string name="validity_28_days">Validity 28 Days</string>
+    <string name="get_12_gb_data">Get 12 GB Data</string>
+    <string name="_699">₹ 699</string>
 
     <string name="lbl_plan_699">₹500</string>
     <string name="lbl_get_plan_title">Get 12 GB Data</string>

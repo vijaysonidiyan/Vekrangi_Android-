@@ -8,18 +8,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.vakrangee.mobilerecharge.Interfaces.ClickEvent;
@@ -32,6 +36,7 @@ import static android.Manifest.permission.WRITE_CONTACTS;
 import static android.Manifest.permission.READ_CONTACTS;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 
@@ -40,11 +45,13 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
     ImageView imgHelp;
     RecyclerView recyclerRecent,recyclerContacts;
     RecyclerView.LayoutManager layoutManagerRecent,layoutManagerContact;
+    ProgressBar mProgressBar;
     RecentAdapter mRecentAdapter;
     private MyContactsAdapter myContactsAdapter;
     Cursor cursor;
     List<Contacts.ContactList> mContactLists;
     Random rnd = new Random();
+    ProgressDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,12 +63,17 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
     private void initialization() {
         mContactLists = new ArrayList<>();
 
-
         layoutManagerRecent = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         layoutManagerContact = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
 
+        layoutManagerRecent.setAutoMeasureEnabled(false);
+        layoutManagerContact.setAutoMeasureEnabled(false);
+
         mRecentAdapter = new RecentAdapter(getApplicationContext(), Constant.key_contact);
         myContactsAdapter = new MyContactsAdapter(getApplicationContext(),Constant.key_contact);
+
+        mProgressBar = findViewById(R.id.progress_circular);
+        mProgressBar.setVisibility(View.GONE);
 
         recyclerRecent = findViewById(R.id.recycle_recent);
         recyclerContacts = findViewById(R.id.recycle_contacts);
@@ -72,33 +84,82 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
         recyclerRecent.setLayoutManager(layoutManagerRecent);
         recyclerContacts.setLayoutManager(layoutManagerContact);
 
+        recyclerRecent.setNestedScrollingEnabled(true);
+        recyclerContacts.setNestedScrollingEnabled(true);
+
+        recyclerRecent.setHasFixedSize(true);
+        recyclerContacts.setHasFixedSize(true);
+
         recyclerRecent.setAdapter(mRecentAdapter);
         recyclerContacts.setAdapter(myContactsAdapter);
+
 
         if (checkPermission()){
             getContacts();
         }else {
             requestPermission();
         }
+
+        //upDateUI(false);
     }
 
-    private void getContacts() {
-        cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
-        if ((cursor != null ? cursor.getCount() : 0) > 0) {
-            while (cursor.moveToNext()) {
-                @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-                @SuppressLint("Range") String phoneNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
 
-                int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
-                Contacts.ContactList item = new Contacts.ContactList();
-                item.setName(name);
-                item.setNumber(phoneNumber);
-                item.setColor(color);
-                myContactsAdapter.addItem(item);
-            }
+
+    private void getContacts() {
+
+        //showProgressDialog();
+        String[] projection = new String[] {
+                ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
+                ContactsContract.CommonDataKinds.Phone.NUMBER,
+                ContactsContract.CommonDataKinds.Phone.NORMALIZED_NUMBER,
+                //plus any other properties you wish to query
+        };
+
+        Cursor cursor = null;
+        try {
+            cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, projection, null, null, null);
+        } catch (SecurityException e) {
+            //SecurityException can be thrown if we don't have the right permissions
         }
-        if(cursor!=null){
-            cursor.close();
+
+        if (cursor != null) {
+            try {
+                HashSet<String> normalizedNumbersAlreadyFound = new HashSet<>();
+                int indexOfNormalizedNumber = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NORMALIZED_NUMBER);
+                int indexOfDisplayName = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME);
+                int indexOfDisplayNumber = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
+
+                while (cursor.moveToNext()) {
+                    String normalizedNumber = cursor.getString(indexOfNormalizedNumber);
+                    if (normalizedNumbersAlreadyFound.add(normalizedNumber)) {
+                        String displayName = cursor.getString(indexOfDisplayName);
+                        String displayNumber = cursor.getString(indexOfDisplayNumber);
+
+                        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+                        Contacts.ContactList item = new Contacts.ContactList();
+                        item.setName(displayName);
+                        item.setNumber(displayNumber);
+                        item.setColor(color);
+                        //myContactsAdapter.addItem(item);
+                        mContactLists.add(item);
+
+                        //haven't seen this number yet: do something with this contact!
+                    } else {
+                        //don't do anything with this contact because we've already found this number
+                    }
+                }
+            } finally {
+               //upDateUI(false);
+                if (mContactLists.size()>0){
+                    myContactsAdapter.addList(mContactLists);
+                    myContactsAdapter.notifyDataSetChanged();
+                    //myContactsAdapter = new MyContactsAdapter(getApplicationContext(),Constant.key_contact,mContactLists);
+                    //recyclerContacts.setAdapter(myContactsAdapter);
+                }
+               // dialog.dismiss();
+
+                cursor.close();
+            }
         }
     }
 
@@ -146,6 +207,18 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
                 .setNegativeButton("Cancel", null)
                 .create()
                 .show();
+    }
+
+    private void upDateUI(boolean b) {
+
+        Log.d("TAG","Update UI--->"+b);
+        if (b){
+            mProgressBar.setVisibility(View.VISIBLE);
+            recyclerContacts.setVisibility(View.GONE);
+        }else {
+            mProgressBar.setVisibility(View.GONE);
+            recyclerContacts.setVisibility(View.VISIBLE);
+        }
     }
 
     /* On ClickEvent */
@@ -199,6 +272,16 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
 
 
         dialog.show();
+    }
+
+   public void  showProgressDialog(){
+       dialog = new ProgressDialog(this); // this = YourActivity
+       dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+       dialog.setTitle("Loading");
+       dialog.setMessage("Loading. Please wait...");
+       dialog.setIndeterminate(true);
+       dialog.setCanceledOnTouchOutside(false);
+       dialog.show();
     }
 
 
