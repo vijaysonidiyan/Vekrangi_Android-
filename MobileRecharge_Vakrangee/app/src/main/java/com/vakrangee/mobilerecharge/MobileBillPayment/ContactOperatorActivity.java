@@ -93,7 +93,7 @@ public class ContactOperatorActivity extends AppCompatActivity {
     }
 
     private void getContacts() {
-        TelephonyManager mTelephonyMgr;
+        /*TelephonyManager mTelephonyMgr;
         mTelephonyMgr = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED &&
@@ -102,7 +102,7 @@ public class ContactOperatorActivity extends AppCompatActivity {
             @SuppressLint("MissingPermission") String no = mTelephonyMgr.getSimSerialNumber();
             txtMyNumber.setText(no);
 
-        }
+        }*/
 
         String[] projection = new String[] {
                 ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
@@ -167,18 +167,18 @@ public class ContactOperatorActivity extends AppCompatActivity {
 
                 boolean write = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                 boolean read = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-                boolean phone = grantResults[2] == PackageManager.PERMISSION_GRANTED;
-                boolean sms = grantResults[3] == PackageManager.PERMISSION_GRANTED;
-                boolean pno = grantResults[4] == PackageManager.PERMISSION_GRANTED;
+                //boolean phone = grantResults[2] == PackageManager.PERMISSION_GRANTED;
+                //boolean sms = grantResults[3] == PackageManager.PERMISSION_GRANTED;
+                //boolean pno = grantResults[4] == PackageManager.PERMISSION_GRANTED;
 
-                if (write && read && phone && sms) {
+                if (write && read ) {
                     getContacts();
                 } else {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
                             showMessageOKCancel("You need to allow access all the permissions",
                                     (dialog, which) -> {
-                                        requestPermissions(new String[]{WRITE_CONTACTS, READ_CONTACTS, READ_PHONE_STATE, READ_SMS,READ_PHONE_NUMBERS},
+                                        requestPermissions(new String[]{WRITE_CONTACTS, READ_CONTACTS/*, READ_PHONE_STATE, READ_SMS,READ_PHONE_NUMBERS*/},
                                                 PERMISSION_REQUEST_CODE);
                                     });
                         }
@@ -207,15 +207,16 @@ public class ContactOperatorActivity extends AppCompatActivity {
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_CONTACTS);
         int result1 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_CONTACTS);
-        int result2 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_PHONE_STATE);
-        int result3 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_SMS);
-        int result4 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_PHONE_NUMBERS);
+        //int result2 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_PHONE_STATE);
+        //int result3 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_SMS);
+        //int result4 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_PHONE_NUMBERS);
 
-        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED && result2 == PackageManager.PERMISSION_GRANTED && result3 == PackageManager.PERMISSION_GRANTED && result4 == PackageManager.PERMISSION_GRANTED;
+        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
+               // && result2 == PackageManager.PERMISSION_GRANTED && result3 == PackageManager.PERMISSION_GRANTED && result4 == PackageManager.PERMISSION_GRANTED;
     }
 
     private void requestPermission() {
-        ActivityCompat.requestPermissions(this, new String[]{WRITE_CONTACTS, READ_CONTACTS, READ_PHONE_STATE, READ_SMS,READ_PHONE_NUMBERS}, PERMISSION_REQUEST_CODE);
+        ActivityCompat.requestPermissions(this, new String[]{WRITE_CONTACTS, READ_CONTACTS/*, READ_PHONE_STATE, READ_SMS,READ_PHONE_NUMBERS*/}, PERMISSION_REQUEST_CODE);
     }
 
     private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {

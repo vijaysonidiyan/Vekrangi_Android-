@@ -5,7 +5,7 @@
     android:id="@+id/coordinatorlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_background"
+    android:background="@android:color/white"
     android:orientation="vertical"
     android:paddingHorizontal="18dp"
     android:paddingTop="18dp"
@@ -15,17 +15,15 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bg_background"
+        android:background="@android:color/white"
         android:fitsSystemWindows="true">
-
-
-
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_collapseMode="parallax"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:scrimAnimationDuration="0">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
