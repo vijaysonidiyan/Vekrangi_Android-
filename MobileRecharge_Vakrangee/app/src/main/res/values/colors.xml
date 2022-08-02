@@ -31,3 +31,12 @@
 
 
 </resources>
+
+    <color name="backcolor">#2C9DE4</color>
+    <color name="blue_bg">#DFF3FF</color>
+    <color name="grey">#F4F6F8</color>
+    <color name="pink">#F4E1FB</color>
+    <color name="green">#E3FDEA</color>
+    <color name="line">#e5f0fb</color>
+</resources>
+</resources>
