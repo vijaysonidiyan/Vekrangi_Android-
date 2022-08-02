@@ -42,6 +42,46 @@
             android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_mobile_number"
+        android:fontFamily="@font/quicksand_semi_bold"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black02"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/reactangle">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/backcolor"
+            android:text="@string/country_code"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:background="#E6E8EB"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:id="@+id/edtContact"
+            android:hint="@string/hint_enter_number_here"
+            android:textSize="13sp"
+            android:maxLength="15"
+            android:inputType="text"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,44 +92,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/enter_mobile_number"
-                android:fontFamily="@font/quicksand_semi_bold"
-                android:textSize="15sp"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/black02"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                android:orientation="horizontal"
-                android:background="@drawable/reactangle">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/backcolor"
-                    android:text="@string/country_code"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:background="#E6E8EB"/>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="4dp"
-                    android:hint="@string/hint_enter_number_here"
-                    android:textSize="13sp"
-                    android:maxLength="10"
-                    android:inputType="phone"
-                    android:background="@android:color/transparent"/>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -135,7 +138,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/txt_contact"
+                        android:id="@+id/txtMyContact"
                         android:text="@string/contact_no"
                         android:fontFamily="@font/quicksandmedium"
                         android:textSize="12sp"
