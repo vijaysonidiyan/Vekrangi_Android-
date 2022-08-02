@@ -49,7 +49,7 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
     EditText edtNumber;
     RecyclerView recyclerRecent,recyclerContacts;
     RecyclerView.LayoutManager layoutManagerRecent,layoutManagerContact;
-    ProgressBar mProgressBar;
+
     RecentAdapter mRecentAdapter;
     private MyContactsAdapter myContactsAdapter;
     Cursor cursor;
@@ -76,8 +76,8 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
         mRecentAdapter = new RecentAdapter(getApplicationContext(), Constant.key_contact);
         myContactsAdapter = new MyContactsAdapter(getApplicationContext(),Constant.key_contact);
 
-        mProgressBar = findViewById(R.id.progress_circular);
-        mProgressBar.setVisibility(View.GONE);
+
+
 
         recyclerRecent = findViewById(R.id.recycle_recent);
         recyclerContacts = findViewById(R.id.recycle_contacts);
@@ -216,17 +216,7 @@ public class ContactActivity extends AppCompatActivity implements ClickEvent {
                 .show();
     }
 
-    private void upDateUI(boolean b) {
 
-        Log.d("TAG","Update UI--->"+b);
-        if (b){
-            mProgressBar.setVisibility(View.VISIBLE);
-            recyclerContacts.setVisibility(View.GONE);
-        }else {
-            mProgressBar.setVisibility(View.GONE);
-            recyclerContacts.setVisibility(View.VISIBLE);
-        }
-    }
 
     /* On ClickEvent */
     @SuppressLint("NonConstantResourceId")
