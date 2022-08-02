@@ -69,9 +69,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
-            android:name=".fastag.activities.FastagRechargeEntryActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="true">
+         
 
         </activity>
         <activity
@@ -84,10 +82,10 @@
             android:name=".fastag.activities.FastagRechargeActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".electricityBill.FAQAcitivity"
@@ -129,12 +127,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-            android:theme="@style/Theme.AppCompat.NoActionBar">
 
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+
     </application>
 
 </manifest>
