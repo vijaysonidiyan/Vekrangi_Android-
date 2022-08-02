@@ -1,8 +1,12 @@
 package com.vakrangee.mobilerecharge.MobileBillPayment;
 
 import static android.Manifest.permission.READ_CONTACTS;
+import static android.Manifest.permission.READ_PHONE_NUMBERS;
+import static android.Manifest.permission.READ_PHONE_STATE;
+import static android.Manifest.permission.READ_SMS;
 import static android.Manifest.permission.WRITE_CONTACTS;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -10,7 +14,9 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -18,6 +24,12 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.telephony.TelephonyManager;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.vakrangee.mobilerecharge.MobileRecharge.adapter.MyContactsAdapter;
 import com.vakrangee.mobilerecharge.MobileRecharge.adapter.RecentAdapter;
@@ -32,9 +44,11 @@ import java.util.Random;
 public class ContactOperatorActivity extends AppCompatActivity {
 
     private static final int PERMISSION_REQUEST_CODE = 200;
+    TextView txtMyNumber;
     private RecyclerView recyclerRecent,recyclerContacts;
     private RecyclerView.LayoutManager layoutManagerRecent,layoutManagerContact;
     private RecentAdapter mRecentAdapter;
+    EditText edtNumber;
     private MyContactsAdapter myContactsAdapter;
     private Cursor cursor;
     private List<Contacts.ContactList> mContactLists;
@@ -60,6 +74,11 @@ public class ContactOperatorActivity extends AppCompatActivity {
         mRecentAdapter = new RecentAdapter(getApplicationContext(), Constant.key_operator);
         myContactsAdapter = new MyContactsAdapter(getApplicationContext(), Constant.key_operator);
 
+        edtNumber = findViewById(R.id.edtContact);
+        edtNumber.addTextChangedListener(textWatcher);
+
+        txtMyNumber = findViewById(R.id.txtMyContact);
+
         recyclerRecent.setLayoutManager(layoutManagerRecent);
         recyclerContacts.setLayoutManager(layoutManagerContact);
 
@@ -74,6 +93,17 @@ public class ContactOperatorActivity extends AppCompatActivity {
     }
 
     private void getContacts() {
+        TelephonyManager mTelephonyMgr;
+        mTelephonyMgr = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+        }else {
+            @SuppressLint("MissingPermission") String no = mTelephonyMgr.getSimSerialNumber();
+            txtMyNumber.setText(no);
+
+        }
+
         String[] projection = new String[] {
                 ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
                 ContactsContract.CommonDataKinds.Phone.NUMBER,
@@ -130,50 +160,62 @@ public class ContactOperatorActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case PERMISSION_REQUEST_CODE:
-                if (grantResults.length > 0) {
+        if (requestCode == PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0) {
 
-                    boolean write = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                    boolean read = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                boolean write = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                boolean read = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                boolean phone = grantResults[2] == PackageManager.PERMISSION_GRANTED;
+                boolean sms = grantResults[3] == PackageManager.PERMISSION_GRANTED;
+                boolean pno = grantResults[4] == PackageManager.PERMISSION_GRANTED;
 
-                    if (write && read) {
-                        getContacts();
-                    }else {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-                                showMessageOKCancel("You need to allow access to both the permissions",
-                                        new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                                    requestPermissions(new String[]{WRITE_CONTACTS, READ_CONTACTS},
-                                                            PERMISSION_REQUEST_CODE);
-                                                }
-                                            }
-                                        });
-                                return;
-                            }
+                if (write && read && phone && sms) {
+                    getContacts();
+                } else {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
+                            showMessageOKCancel("You need to allow access all the permissions",
+                                    (dialog, which) -> {
+                                        requestPermissions(new String[]{WRITE_CONTACTS, READ_CONTACTS, READ_PHONE_STATE, READ_SMS,READ_PHONE_NUMBERS},
+                                                PERMISSION_REQUEST_CODE);
+                                    });
                         }
-
                     }
+
                 }
-                break;
+            }
         }
     }
+
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            myContactsAdapter.getFilter().filter(charSequence.toString());
+        }
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
 
 
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_CONTACTS);
         int result1 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_CONTACTS);
+        int result2 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_PHONE_STATE);
+        int result3 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_SMS);
+        int result4 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_PHONE_NUMBERS);
 
-        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
+        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED && result2 == PackageManager.PERMISSION_GRANTED && result3 == PackageManager.PERMISSION_GRANTED && result4 == PackageManager.PERMISSION_GRANTED;
     }
 
     private void requestPermission() {
-        ActivityCompat.requestPermissions(this, new String[]{WRITE_CONTACTS, READ_CONTACTS}, PERMISSION_REQUEST_CODE);
+        ActivityCompat.requestPermissions(this, new String[]{WRITE_CONTACTS, READ_CONTACTS, READ_PHONE_STATE, READ_SMS,READ_PHONE_NUMBERS}, PERMISSION_REQUEST_CODE);
     }
 
     private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
