@@ -26,8 +26,15 @@
     <color name="bg_tv_transaction">#F4F6F8</color>
 
 
+    <color name="blue_bg">#DFF3FF</color>
+
+    <color name="green">#E3FDEA</color>
+    <color name="line">#e5f0fb</color>
 
 
 
 
 </resources>
+
+
+
