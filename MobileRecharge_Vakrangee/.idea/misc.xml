@@ -5,10 +5,36 @@
       <map>
         <entry key="app/src/main/res/drawable-anydpi/ic_back_arrow.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable-anydpi/ic_down_arrow.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_down_bluearrow.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_right_bluearrow.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_top_arrow.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_top_bluearrow.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/amount_bg.xml" value="0.1865" />
+        <entry key="app/src/main/res/drawable/assistancebtn_bg.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable/balancebg.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable/bluebg.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable/bluebg2.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable/greenbg.xml" value="0.1665" />
         <entry key="app/src/main/res/drawable/ic_back_arrow_background.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/paymentbg.xml" value="0.1665" />
+        <entry key="app/src/main/res/drawable/proceedbg.xml" value="0.179" />
         <entry key="app/src/main/res/drawable/questionbg.xml" value="0.1665" />
         <entry key="app/src/main/res/drawable/select_type_bg.xml" value="0.1665" />
+        <entry key="app/src/main/res/drawable/whitebg.xml" value="0.1665" />
+        <entry key="app/src/main/res/layout/activity_base.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/activity_electricity_bill.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_electricity_bill_details.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_faqacitivity.xml" value="0.450402144772118" />
+        <entry key="app/src/main/res/layout/activity_fastag_recharge.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_fastag_recharge_detail.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_fastag_recharge_entry.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/layout/activity_payment_success.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/activity_payment_unsuccess.xml" value="0.12" />
+        <entry key="app/src/main/res/layout/amount_list_item.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/banklist_item.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/previous_fastag_recharge.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/select_board_item.xml" value="0.450402144772118" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_back_arrow.xml" value="0.1675" />
       </map>
     </option>
